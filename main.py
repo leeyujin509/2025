@@ -49,3 +49,76 @@ st.markdown(
 # --- MBTI 궁합 데이터 ---
 compatibility_data = {
     ("ENFP", "INFJ"): {
+        "compat": "환상의 조합 💫",
+        "desc": "서로의 부족한 점을 채워주며 깊은 관계를 형성합니다.",
+        "reason": "ENFP의 활발함이 INFJ의 조용한 성향을 깨우고, INFJ의 깊은 통찰이 ENFP를 안정시킵니다.",
+        "img": "https://img.icons8.com/color/96/000000/love.png"
+    },
+    ("ENTP", "ENTJ"): {
+        "compat": "에너지가 넘치는 팀 ⚡",
+        "desc": "목표 지향적인 에너지가 서로를 북돋아 줍니다.",
+        "reason": "ENTP의 창의력과 ENTJ의 추진력이 만나 빠르게 성과를 냅니다.",
+        "img": "https://img.icons8.com/color/96/000000/rocket.png"
+    },
+    ("ISFJ", "ESFP"): {
+        "compat": "서로를 따뜻하게 하는 관계 🌸",
+        "desc": "서로의 성향을 존중하며 조화롭게 지냅니다.",
+        "reason": "ISFJ의 안정감이 ESFP의 자유분방함을 포용하고, ESFP의 밝음이 ISFJ를 즐겁게 합니다.",
+        "img": "https://img.icons8.com/color/96/000000/handshake.png"
+    },
+    ("INTP", "INTJ"): {
+        "compat": "두뇌풀가동 전략가 조합 🧠",
+        "desc": "깊이 있는 대화를 나누며 지적인 유대감을 형성합니다.",
+        "reason": "INTP의 탐구심과 INTJ의 계획성이 결합해 완벽한 실행을 가능하게 합니다.",
+        "img": "https://img.icons8.com/color/96/000000/strategy.png"
+    },
+    ("ISFP", "ENFJ"): {
+        "compat": "따뜻한 예술가 & 리더 💐",
+        "desc": "감성적이고 서로를 이해하는 관계입니다.",
+        "reason": "ISFP의 감수성과 ENFJ의 배려심이 만나 깊은 공감을 이끌어냅니다.",
+        "img": "https://img.icons8.com/color/96/000000/artist.png"
+    }
+}
+
+# --- 제목 ---
+st.markdown('<p class="title">💖 MBTI 궁합 테스트</p>', unsafe_allow_html=True)
+st.markdown('<p class="subtitle">두 사람의 MBTI를 선택하면 궁합과 이유를 알려드립니다!</p>', unsafe_allow_html=True)
+
+# --- MBTI 선택 ---
+col1, col2 = st.columns(2)
+
+with col1:
+    mbti1 = st.selectbox("👤 첫 번째 사람 MBTI", ["선택하세요"] + sorted(set([mbti for pair in compatibility_data.keys() for mbti in pair])))
+
+with col2:
+    mbti2 = st.selectbox("👤 두 번째 사람 MBTI", ["선택하세요"] + sorted(set([mbti for pair in compatibility_data.keys() for mbti in pair])))
+
+# --- 결과 출력 ---
+if mbti1 != "선택하세요" and mbti2 != "선택하세요":
+    pair = (mbti1, mbti2)
+    reverse_pair = (mbti2, mbti1)
+
+    if pair in compatibility_data:
+        data = compatibility_data[pair]
+    elif reverse_pair in compatibility_data:
+        data = compatibility_data[reverse_pair]
+    else:
+        data = {
+            "compat": "일반적인 관계 😊",
+            "desc": "서로 다른 매력을 가진 조합입니다.",
+            "reason": "다양한 성향을 이해하고 존중하면 관계가 더욱 깊어질 수 있습니다.",
+            "img": "https://img.icons8.com/color/96/000000/friends.png"
+        }
+
+    # 출력
+    st.image(data["img"], width=80)
+    st.subheader(f"{mbti1} ❤️ {mbti2} → {data['compat']}")
+    st.markdown(
+        f"""
+        <div class="result-box">
+        <strong>관계 설명:</strong> {data['desc']}<br><br>
+        <strong>궁합 이유:</strong> {data['reason']}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
