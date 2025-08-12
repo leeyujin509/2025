@@ -77,6 +77,24 @@ compatibility_data = {
         "desc": "감성적이고 서로를 이해하는 관계입니다.",
         "reason": "ISFP의 감수성과 ENFJ의 배려심이 만나 깊은 공감을 이끌어냅니다.",
         "img": "https://img.icons8.com/color/96/000000/artist.png"
+    },
+    ("INFP", "ENFJ"): {
+        "compat": "이해와 공감의 달인 🌷",
+        "desc": "깊이 있는 감정 교류로 서로를 지지하는 관계입니다.",
+        "reason": "INFP의 감수성과 ENFJ의 리더십이 만나 안정적인 유대감을 형성합니다.",
+        "img": "https://img.icons8.com/color/96/000000/holding-hands.png"
+    },
+    ("INFP", "ENFP"): {
+        "compat": "감성과 열정의 만남 🔥",
+        "desc": "비슷한 가치관과 에너지로 함께 성장하는 관계입니다.",
+        "reason": "둘 다 이상주의적이지만, ENFP가 INFP의 내향성을 부드럽게 열어줍니다.",
+        "img": "https://img.icons8.com/color/96/000000/fire-heart.png"
+    },
+    ("INFP", "INFJ"): {
+        "compat": "영혼의 대화가 가능한 관계 🌌",
+        "desc": "깊은 이해와 공감으로 서로에게 위로가 됩니다.",
+        "reason": "두 사람 모두 가치 중심적이며, 의미 있는 대화를 나누는 데 즐거움을 느낍니다.",
+        "img": "https://img.icons8.com/color/96/000000/moon-symbol.png"
     }
 }
 
