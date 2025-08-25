@@ -78,4 +78,3 @@ if st.button("🔮 전생 확인하기"):
         result = random.choice(past_lives)
         st.markdown(f"<div class='result-title'>{name}님의 전생은 '{result['title']}' 이었습니다!</div>", unsafe_allow_html=True)
         st.markdown(f"<div class='result-desc'>{result['desc']}</div>", unsafe_allow_html=True)
-
