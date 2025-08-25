@@ -41,7 +41,7 @@ page_bg = """
     background: rgba(0,0,0,0);
 }
 h1 {
-    color: #FFD700;
+    color: white;   /* ✨ 흰색으로 변경 ✨ */
     text-shadow: 2px 2px 8px black;
     font-size: 3em;
     text-align: center;
